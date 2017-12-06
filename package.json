@@ -4,7 +4,7 @@
   "description": "testing out a coding riddle that I failed.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha watch test.js"
+    "test": "mocha test.js"
   },
   "repository": {
     "type": "git",
