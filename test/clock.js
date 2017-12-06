@@ -1,11 +1,11 @@
 'use strict';
 
 var assert = require('assert');
-var Clock = require('../src/clock-this');
+var Clock = require('../src/clock');
 
 
 //TODO:  it should be able to run using the same set of testcase
-describe('test using this', function(){
+describe('test', function(){
 	let at;
 	before(function(){
 		at = function(hr, min){

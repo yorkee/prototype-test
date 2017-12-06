@@ -1,29 +1,46 @@
 "use strict";
-const Clock = function(hr, min){
-	this.hr = hr || 0;
-	this.min = min || 0;
-};
+const Clock = function(hour, minute){
+	var hr = hour || 0;
+	var min = minute || 0;
 
-Clock.prototype.toString = function(){
-	function parseTimeDigit(digit){
-		if (digit){
-			if(digit < 10){
-				return "0" + digit;
+	function toString(){
+		function parseTimeDigit(digit){
+			if (digit){
+				if(digit < 10){
+					return "0" + digit;
+				} else {
+					return digit;
+				}
 			} else {
-				return digit;
+				return "00";
 			}
-		} else {
-			return "00";
-		}
-	};
-	return [parseTimeDigit(this.hr), ":", parseTimeDigit(this.min)].join("");
-}
+		};
+		return [parseTimeDigit(hr), ":", parseTimeDigit(min)].join("");
+	}
 
-Clock.prototype.plus = function(plusMin) {
-	this.min = this.min + plusMin;
-	this.hr += Math.floor(this.min / 60);
-	this.min %= 60;
-	return this;
-}
+	function plus(plusMin) {
+		min = min + plusMin;
+		hr += Math.floor(min / 60);
+		min %= 60;
+
+		// return this;
+		// getting away using this totally, although its not efficient creating the whole thing again
+		return {
+			hr: hr,
+			min: min,
+			toString: toString,
+			plus: plus
+		};
+	}
+
+	return {
+		hr: hr,
+		min: min,
+		toString: toString,
+		plus: plus
+	};
+
+
+};
 
 module.exports = Clock;
