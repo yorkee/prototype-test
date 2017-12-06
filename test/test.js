@@ -1,7 +1,7 @@
 'use strict';
 
 var assert = require('assert');
-var Clock = require('./clock');
+var Clock = require('../src/clock');
 
 describe('test using prototype', function(){
 	let at;
