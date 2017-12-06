@@ -15,15 +15,14 @@ Clock.prototype.toString = function(){
 		} else {
 			return "00";
 		}
-	}
-	return parseTimeDigit(this.hr) + ":"+ parseTimeDigit(this.min);
+	};
+	return [parseTimeDigit(this.hr), ":", parseTimeDigit(this.min)].join("");
 }
 
 Clock.prototype.plus = function(plusMin) {
 	this.min = this.min + plusMin;
-	let hrToAdd = Math.floor(this.min / 60);
-	this.min = this.min % 60;
-	this.hr += hrToAdd;
+	this.hr += Math.floor(this.min / 60);
+	this.min %= 60;
 	return this;
 }
 
