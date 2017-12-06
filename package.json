@@ -1,0 +1,22 @@
+{
+  "name": "prototype-test",
+  "version": "1.0.0",
+  "description": "testing out a coding riddle that I failed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha watch test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yorkee/prototype-test.git"
+  },
+  "author": "Elvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yorkee/prototype-test/issues"
+  },
+  "homepage": "https://github.com/yorkee/prototype-test#readme",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
